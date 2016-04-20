@@ -119,6 +119,13 @@ PRODUCT_EXTRA_RECOVERY_KEYS += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/thermal_engine.conf:system/etc/thermal-engine.conf
 
+# set default USB configuration
+PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
+    sys.usb.config=mtp,adb \
+    persist.sys.usb.config=mtp,adb \
+    ro.adb.secure=0
+ 
+ 
 # Wifi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
