@@ -13,14 +13,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
--include device/cyanogen/msm8916-common/BoardConfigCommon.mk
+-include device/yu/msm8916-common/BoardConfigCommon.mk
+
+# inherit from the proprietary version
+-include vendor/yu/lettuce/BoardConfigVendor.mk
 
 DEVICE_PATH := device/yu/lettuce
 
 TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/include
 
 # Kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_lettuce-64_defconfig
+TARGET_KERNEL_CONFIG := arcane9_lettuce-64_defconfig
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
@@ -69,6 +72,3 @@ TARGET_TAP_TO_WAKE_NODE := "/sys/devices/soc.0/78b9000.i2c/i2c-5/5-0040/gesture"
 BOARD_WIDEVINE_OEMCRYPTO_LEVEL := 3
 
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
-
-# inherit from the proprietary version
--include vendor/yu/lettuce/BoardConfigVendor.mk
